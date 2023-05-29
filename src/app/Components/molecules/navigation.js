@@ -38,7 +38,7 @@ export default function Navigation() {
       <li className='lg:hidden inline'><a>Home</a></li>
       <li className='lg:hidden inline'><a>Menu</a></li>
       <li className='lg:hidden inline'><a>Observation</a></li>
-        <li><a>Logout</a></li>
+      <li className='inline'><a>Login</a></li>
       </ul>
     </section>
     </section>
