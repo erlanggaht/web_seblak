@@ -30,7 +30,13 @@ header{
 
 .cf1{
     background-image: url('./Components//assets//krupuk.bmp');
+
 }
+.cf2 {
+    background-image: url('./Components//assets//art4.bmp');
+
+}
+
 .card_imgClass1{
     background-image: url('./Components//assets//ceker.bmp');
 }
@@ -41,9 +47,6 @@ header{
     background-image: url('./Components//assets//tulang.bmp');
 }
 
-.cf2 {
-    background-image: url('./Components//assets//art4.bmp');
-}
 
 .cards {
 position: relative;

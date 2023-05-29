@@ -16,9 +16,8 @@ export default function Navigation() {
   </section>
   <section className="flex-none">
     <ul className="menu menu-horizontal px-1 flex gap-7">
-      <li className='hover:bg-[#d33f01] rounded-md hidden lg:inline'><a>Home</a></li>
-      <li className='hover:bg-[#d33f01] rounded-md hidden lg:inline'><a>Menu</a></li>
-      <li className='hover:bg-[#d33f01] rounded-md hidden lg:inline'><a>Observation</a></li>
+      <li className='hover:bg-[#d33f01] rounded-md hidden lg:inline'><a>Dashboard</a></li>
+      <li className='hover:bg-[#d33f01] rounded-md hidden lg:inline'><a>Menu Seblak</a></li>
       <section className='flex gap-2'>
       <section className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle hover:bg-[#d33f01] rounded-full">
