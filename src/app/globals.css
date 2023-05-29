@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    scroll-behavior: smooth;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+button:hover{
+   background-color:orange ;
+   box-shadow: inset 0px 0px 0px #ca851d;
+
+}
+button{
+    transition: ease .2s;
+}
+header{
+    background-color: orange;
+}
+
+.header-aset {
+    background-image: url('./Components/assets/seblak_g.png');
+}
+.header-jahanam {
+    background-image: url('./Components/assets/jahanam.jpg');
+}
+
+.cf1{
+    background-image: url('./Components//assets//krupuk.bmp');
+}
+.card_imgClass1{
+    background-image: url('./Components//assets//ceker.bmp');
+}
+.card_imgClass2{
+    background-image: url('./Components//assets//baso.bmp');
+}
+.card_imgClass3{
+    background-image: url('./Components//assets//tulang.bmp');
+}
+
+.cf2 {
+    background-image: url('./Components//assets//art4.bmp');
+}
+
+.cards {
+position: relative;
+}
+
+.cards::before{
+    content: "";width: 100%;height: 100%;
+    background-image: url('./Components/assets//seblaks_bungkus.png');
+    background-repeat: no-repeat;
+    background-position: bottom -70px right 20px;
+    background-size: contain;
+    position: absolute;
+    bottom: 90px;
+    right: -40px;
+    filter: opacity(0.3) blur(10px);
+}
+
+.artboard1-css {
+    background-image: url('./Components/assets/art1.bmp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.artboard2-css {
+    background-image: url('./Components/assets/art2.bmp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+}
+.artboard3-css {
+    background-image: url('./Components/assets/cilok.bmp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+}
+
+.artboard4-css {
+    background-image: url('./Components/assets/art3.bmp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+}
+
+.bg-chat{
+    background-color: #f3f3f3;
+    opacity: 0.9;
+    background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
+    background-size: 10px 18px;
+    background-position: 0 0, 0 0, 5px 9px, 5px 9px, 0 0, 5px 9px;
+}
+
+.bg-chat:hover{
+    opacity: 1;
+    transition: ease-in-out .2s;
+}
