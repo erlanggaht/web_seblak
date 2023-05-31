@@ -23,7 +23,7 @@ export default function Chat({props}) {
 <div className="chat chat-end">
   <div className="chat-image avatar">
     <div className="w-10 rounded-full">
-      <Image alt='avatar_consumer' src={props.image} height={100} width={100} />
+      <Image src={props.image} alt={'avatar'} height={100} width={100} />
     </div>
   </div>
   <div className="chat-header">
@@ -39,7 +39,7 @@ export default function Chat({props}) {
 <div className="chat chat-end my-6">
   <div className="chat-image avatar">
     <div className="w-10 rounded-full">
-      <Image alt='avatar_consumer' src={props.image} height={100} width={100} />
+      <Image alt={'avatar_consumer'} src={props.image} height={100} width={100} />
     </div>
   </div>
   <div className="chat-header">

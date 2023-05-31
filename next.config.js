@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com',"daisyui.com"],
   },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

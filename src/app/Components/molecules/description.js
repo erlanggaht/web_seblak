@@ -7,7 +7,7 @@ export default function Description() {
         <p className='text-lg'>Seblak yang mulai populer sekitar tahun 2000an di Bandung, diduga di Garut dan Cianjur Selatan sudah ada kuliner seperti seblak sebelum jaman kemerdekaan yang dikenal dengan nama Kurupuk Leor (karena teksturnya yang ngaleor / lemas).</p>
         <p className='mt-12'></p>
         <section className='absolute right-6 -bottom-4 sm:right-10 '>
-        <Button_order text={'pesan sekarang'} Links={'/pages/list_menu'}/>
+        <Button_order text={'ORDER NOW'} Links={'/pages/list_menu'}/>
         </section>
     </section>
   )

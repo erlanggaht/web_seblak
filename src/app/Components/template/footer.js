@@ -15,8 +15,8 @@ export default function Footer() {
             <section>
                 <h5 className='text-sm mt-5 sm:mt-8'>Follow kami!</h5>
                 <section className='flex gap-2 mt-2'>
-                    <section className='rounded-full shadow-sm bg-[#eee] p-1'><Image src={fb} width={20} height={20}/></section>
-                    <section className='rounded-full shadow-sm bg-[#eee] p-1'><Image src={ig} width={20} height={20}/></section>               
+                    <section className='rounded-full shadow-sm bg-[#eee] p-1'><Image src={fb} width={20} height={20} alt='fb'/></section>
+                    <section className='rounded-full shadow-sm bg-[#eee] p-1'><Image src={ig} width={20} height={20} alt='ig'/></section>               
                     </section>
             </section>
         </section>

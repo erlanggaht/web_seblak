@@ -1,5 +1,4 @@
 import Description from "../molecules/description";
-import Navigation from "../molecules/navigation";
 
 
 export default function Header_Home() {
@@ -8,8 +7,7 @@ export default function Header_Home() {
     <section className='flex justify-center md:w-[340px] md:h-[340px] w-[280px] h-[280px] mt-10 absolute -bottom-20 right-0'>
     <section className='header-aset w-full h-full  bg-no-repeat bg-cover bg-center '></section>
     </section>
-    <Navigation/>
-    <section className='sm:m-16 mt-16 mx-16 flex justify-center items-center sm:items-start flex-col sm:flex-row flex-wrap gap-12 sm:gap-12'>
+    <section className=' py-16 mx-16 flex justify-center items-center sm:items-start flex-col sm:flex-row flex-wrap gap-12 sm:gap-12'>
     <section className='flex justify-center md:w-[340px] md:h-[340px] w-[280px] h-[280px] mt-0 lg:mt-10'>
     <section className='header-jahanam w-full h-full  bg-no-repeat bg-cover bg-center rounded-full '></section>
     </section>

@@ -1,4 +1,5 @@
 import Artboard from "./Components/atoms/artboard";
+import Navigation from "./Components/molecules/navigation";
 import Chat from "./Components/organism/chat";
 import Header_Home from "./Components/organism/header_home";
 import Card_main from "./Components/template/card_main";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
     <header className='relative'>
+    <Navigation props={{bg_color:"#eee"}}/>
    <Header_Home/>
     </header>
     <main className="mt-20">
