@@ -3,8 +3,7 @@
 import Breadcump from "@/app/Components/atoms/breadcump"
 import Add_Data from "@/app/config/add_data"
 import Image from "next/image"
-import { redirect, useParams, } from "next/navigation"
-import { parse } from "postcss"
+import { redirect, useParams,useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 
@@ -36,37 +35,44 @@ export const ErrorParams_Not = () => {
 
 export default function Order() {
   const {path} = ErrorParams_Not()
+  const router = useRouter()
   const {image,title,desc,harga} = DataSave()
   const [harga_seblak_tambah,setHarga] = useState(0)
-  const [total_harga,setTotal_harga] = useState(1)
   const [input,setInputs] = useState({
     nama : "",
     alamat : "",
     jumlah :parseInt(1),
-    level_pedas : "",
-    total_harga : harga
+    level_pedas : "Ezyyy",
   })
-  if(path.order_now !== 'order_now') redirect('/notfound')
+  const [total_harga,setTotal_harga] = useState()
+  if(
+  path.order_now !== 'order_now') redirect('/notfound')
 
 
   const setInput = (e) => {
     const targets = e.target
     const name = targets.name
-    
-    setInputs({
-      ...input,
-      [name] : targets.value,
-      total_harga : rupiah((harga*input.jumlah)+harga_seblak_tambah).split('Rp')[1].split(',')[0],
-
+      setInputs({
+        ...input,
+        [name] : targets.value,
         })
   }
 
- 
-console.log(input)
+  useEffect(()=>{
+   setTotal_harga(rupiah((harga*input.jumlah)))
+  },[input])
+
   const pesanSubmit = async (e) => {
     e.preventDefault();
-   await Add_Data()
-  //  redirect('/pages/list_menu')
+  //  await Add_Data({
+  //   nama : input.nama,
+  //   alamat : input.alamat,
+  //   jumlah : input.jumlah,
+  //   level_pedas : input.level_pedas,
+  //   total_harga : input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000)),
+  //   nama_seblak : title
+  //  })
+   router.replace('/terimakasih')
   }
   return (
     <section className='container mx-auto my-20 text-neutral-900'>
@@ -86,30 +92,30 @@ console.log(input)
     <form className="h-full relative mt-2 mx-6" onSubmit={(e) => pesanSubmit(e)}>
       <section>
     <span className="label-text-alt p-1">Nama : </span><br/>
-    <input name="nama" type="text" placeholder="Nama pemesan" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs" 
+    <input name="nama" type="text" placeholder="Nama pemesan" required className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs" 
     onChange={(e) => setInput(e)}/>    
     <input type="number" value={input.jumlah} name="jumlah" placeholder="Jumblah pesan" min={1} max={10} minLength={0} maxLength={10} className="inp_number input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs mx-2" onChange={(e)=>setInput(e)} />  
     </section>
    
     <section>
     <span className="label-text-alt p-1">Alamat : </span><br/>
-    <input name="alamat" type="text" placeholder="Alamat pemesan" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs"
+    <input name="alamat" required type="text" placeholder="Alamat pemesan" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs"
     onChange={(e) => setInput(e)} />  
     </section>  
     
     <section className="mt-2">
     <span className="label-text-alt p-1">Level pedas : </span><br/>
     <select name="level_pedas" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs" onChange={(e) => setInput(e)}>
-  <option onClick={() => setHarga(0)}>Ezyyy</option>
-  <option onClick={() => setHarga(0)}>Normal</option>
-  <option onClick={() => setHarga(0)}>Pedas biasa</option>
-  <option onClick={() => setHarga(0)}>Pedas bgt</option>
-  <option onClick={() => setHarga(2000)}>Pedas setan</option>
+  <option>Ezyyy</option>
+  <option>Normal</option>
+  <option>Pedas biasa</option>
+  <option>Pedas bgt</option>
+  <option>Pedas setan</option>
 </select>
 
     </section>  
     <div className="absolute bottom-0 right-0">
-      <span className="px-2">Total : {input.jumlah == 1 ? rupiah(harga) : rupiah((harga*input.jumlah)+harga_seblak_tambah)}  </span>
+      <span className="px-2">Total : {input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000))}  </span>
       <button type="submit" className="btn btn-primary bg-orange-500 border-none hover:bg-oren-seblak">Pesan</button>
     </div>
     </form>
