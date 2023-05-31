@@ -64,14 +64,15 @@ export default function Order() {
 
   const pesanSubmit = async (e) => {
     e.preventDefault();
-  //  await Add_Data({
-  //   nama : input.nama,
-  //   alamat : input.alamat,
-  //   jumlah : input.jumlah,
-  //   level_pedas : input.level_pedas,
-  //   total_harga : input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000)),
-  //   nama_seblak : title
-  //  })
+  
+   await Add_Data({
+    nama : input.nama,
+    alamat : input.alamat,
+    jumlah : input.jumlah,
+    level_pedas : input.level_pedas,
+    total_harga : input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000)),
+    nama_seblak : title,
+   })
    router.replace('/terimakasih')
   }
   return (
@@ -82,30 +83,33 @@ export default function Order() {
     <div className="card card-side bg-base-100 shadow-xl my-12 flex-col md:flex-row mx-6 ">
   <figure className="w-full md:w-[310px] max-h-[400px] rounded-r-xl"><Image src={`${image}`} width={200} height={360} className="w-full h-full object-cover" alt="Movie"/></figure>
   <div className="card-body">
-    <div className="flex justify-between ">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between ">
      <div>
    <h2 className="card-title">{title}</h2>
     <p className="flex-grow-0">{desc}</p>
     </div>
-    <p className="text-right text-xl font-bold text-orange-500">{rupiah(harga).split(',')[0]} {harga_seblak_tambah ? "+ " + harga_seblak_tambah : ""}</p>
+    <p className="text-left sm:text-right sm:my-0 my-2 text-xl font-bold text-orange-500">{rupiah(harga).split(',')[0]} {harga_seblak_tambah ? "+ " + harga_seblak_tambah : ""}</p>
     </div>
-    <form className="h-full relative mt-2 mx-6" onSubmit={(e) => pesanSubmit(e)}>
-      <section>
+    <form className="sm:h-full relative mt-2 mx-1 sm:mx-6" onSubmit={(e) => pesanSubmit(e)}>
+      <section className="flex flex-col justify-center">
+        <section>
     <span className="label-text-alt p-1">Nama : </span><br/>
-    <input name="nama" type="text" placeholder="Nama pemesan" required className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs" 
-    onChange={(e) => setInput(e)}/>    
-    <input type="number" value={input.jumlah} name="jumlah" placeholder="Jumblah pesan" min={1} max={10} minLength={0} maxLength={10} className="inp_number input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs mx-2" onChange={(e)=>setInput(e)} />  
+    <input name="nama" type="text" placeholder="Nama pemesan" required className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary lg:w-[200px] w-full max-w-xs" 
+    onChange={(e) => setInput(e)}/> 
+     </section>  
+     <span className="label-text-alt p-1 mt-3">Berapa piring/bungkus : </span><br/>
+    <input type="number" value={input.jumlah} name="jumlah" placeholder="Jumblah pesan" min={1} max={10} minLength={0} maxLength={10} className="inp_number input input-bordered border-orange-500 focus:outline-orange-300 input-primary lg:w-[200px] w-full max-w-xs mb-3 sm:mb-0" onChange={(e)=>setInput(e)} />  
     </section>
-   
+
     <section>
     <span className="label-text-alt p-1">Alamat : </span><br/>
-    <input name="alamat" required type="text" placeholder="Alamat pemesan" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs"
+    <input name="alamat" required type="text" placeholder="Alamat pemesan" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary lg:w-[200px] w-full max-w-xs"
     onChange={(e) => setInput(e)} />  
     </section>  
     
     <section className="mt-2">
     <span className="label-text-alt p-1">Level pedas : </span><br/>
-    <select name="level_pedas" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary w-[200px] max-w-xs" onChange={(e) => setInput(e)}>
+    <select name="level_pedas" className="input input-bordered border-orange-500 focus:outline-orange-300 input-primary lg:w-[200px] w-full max-w-xs" onChange={(e) => setInput(e)}>
   <option>Ezyyy</option>
   <option>Normal</option>
   <option>Pedas biasa</option>
@@ -114,7 +118,7 @@ export default function Order() {
 </select>
 
     </section>  
-    <div className="absolute bottom-0 right-0">
+    <div className="static flex justify-center items-center mt-12 mb-2 sm:-bottom-3 sm:right-0 lg:absolute">
       <span className="px-2">Total : {input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000))}  </span>
       <button type="submit" className="btn btn-primary bg-orange-500 border-none hover:bg-oren-seblak">Pesan</button>
     </div>

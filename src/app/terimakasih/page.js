@@ -4,17 +4,17 @@ import { redirect } from "next/navigation"
 
 
 export default function Terimakasih() {
-  // if(typeof window !== undefined) {
-  //    const session = sessionStorage.getItem('data')
-  //   if(!session) {
-  //     redirect('/')
-  //   } else {
-  //     setTimeout(()=>{
-  //       sessionStorage.clear()    
-  //     },3000)
-  //   }
+  if(typeof window !== undefined) {
+     const session = sessionStorage.getItem('data')
+    if(!session) {
+      redirect('/')
+    } else {
+      setTimeout(()=>{
+        sessionStorage.clear()    
+      },3000)
+    }
 
-  // }
+  }
 
    return (
     <>
