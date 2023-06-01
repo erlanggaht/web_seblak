@@ -13,6 +13,7 @@ export default function Page() {
   const path = usePathname().split('/')
   return (
     <section className='container mx-auto my-20'>
+      <div className='sm:text-right text-center my-6 mx-3'><span className='text-white text-center rounded-md shadow-md p-3 italic bg-orange-500 inline-block'>Silahkan Daftar & Login untuk dapatkan fitur keranjang dan promo potongan harga.</span></div>
       <section className='p-3 shadow-sm border rounded-md text-slate-900'>
       <Breadcump props={{page1:path[1],page2:path[2]}}/>  
       </section>

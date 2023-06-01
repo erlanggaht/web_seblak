@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc } from "firebase/firestore";
 import { db } from "./firebase";
 
 
@@ -51,9 +51,9 @@ export default async function Add_Data(data) {
           alamat,
           total_harga : total_harga.split('Rp')[1].split(',')[0],
           tanggal_pembelian : `${hari}.${tanggal}.${bulan}.${tahun}`,
-          waktu_pembelian : `${jam}.${menit}.${detik}`
+          waktu_pembelian : `${jam}.${menit}.${detik}`,
         });
-      
+        sessionStorage.setItem('id_user',docRef.id)
         console.log("Berhasil daftar", docRef.id);
       } catch (e) {
         console.error("Error saat daftar: ", e);
