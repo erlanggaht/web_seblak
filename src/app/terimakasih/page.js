@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 import { redirect } from "next/navigation"
-P
+
 
 export default function Terimakasih() {
   if(typeof window !== "undefined") {
