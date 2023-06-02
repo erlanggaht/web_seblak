@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
-import { db } from '@/app/config/firebase';
-import RootLayout from '@/app/layout';
+
 
 export default async function Signup() {
 

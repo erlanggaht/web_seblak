@@ -2,10 +2,10 @@
 import Breadcump from '@/app/Components/atoms/breadcump'
 import Card_shop from '@/app/Components/atoms/card_shop'
 import {usePathname} from 'next/navigation'
-import buy1 from '../../Components/assets/art1.bmp'
-import buy2 from '../../Components/assets/art2.bmp'
-import buy3 from '../../Components/assets/ceker.bmp'
-import buy4 from '../../Components/assets/baso.bmp'
+import buy1 from '../../Components/assets/art1.jpg'
+import buy2 from '../../Components/assets/art2.jpg'
+import buy3 from '../../Components/assets/ceker.jpg'
+import buy4 from '../../Components/assets/baso.jpg'
 
 
 

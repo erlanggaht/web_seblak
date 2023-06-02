@@ -7,7 +7,7 @@ const docRef = doc(db, "tamu", ID_user);
 const docSnap = await getDoc(docRef);
 
 if (docSnap.exists()) {
-//   console.log("Data anda", docSnap.data()); 
+  console.log("Data anda", docSnap.data()); 
   return docSnap.data()   
 } else {
   // docSnap.data() will be undefined in this case

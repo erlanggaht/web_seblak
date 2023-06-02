@@ -17,17 +17,17 @@ export default function Terimakasih() {
   const path = usePathname()
   const router = useRouter()
   
-  // if(typeof window !== "undefined") {
-  //    const session = sessionStorage.getItem('data') 
-  //   if(!session) {
-  //     router.replace('/')
-  //   } else {
-  //     setTimeout(()=>{
-  //       sessionStorage.clear()    
-  //     },3000)
-  //   }
+  if(typeof window !== "undefined") {
+     const session = sessionStorage.getItem('data') 
+    if(!session) {
+      router.replace('/')
+    } else {
+      setTimeout(()=>{
+        sessionStorage.clear()    
+      },3000)
+    }
 
-  // }
+  }
 
   useEffect(() =>{
      async function getData  () {
