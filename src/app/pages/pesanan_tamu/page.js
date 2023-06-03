@@ -20,7 +20,7 @@ export default async function PesananTamu() {
         {!res ? <div className='flex justify-center items-center content-stretch text-center   flex-col h-screen gap-3'>
             <h1 className='sm:text-2xl text-xl text-slate-700 italic font-bold'>Tidak ada pesanan dengan ID <span className='text-[#ffa500]'>{getUrlQuery}</span><br/><span className='text-slate-600 text-sm text-right'>perhatikan spasi dan karakter lainnya. ID pesanan harus sesuai!</span>
 </h1>
-            <form method='GET' className='sm:text-center text-center justify-center sm:mx-0 w-[584px] px-2 flex gap-3'>
+            <form method='GET' className='sm:text-center text-center justify-center sm:mx-0 sm:w-[584px] w-[284px] px-2 flex gap-3'>
             <input type="text" name='id' placeholder="Cari lagi pesanan saya" className="input input-bordered w-full max-w-xs text-slate-700" />
             <button className="btn">Submit</button>
             </form>
