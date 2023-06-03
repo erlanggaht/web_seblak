@@ -10,7 +10,7 @@ export default async function Signup() {
         <h1 className='text-2xl text-center text-neutral-900'>Daftar</h1>
         <p className='text-neutral-500 text-center  text-lg pt-1 '>selamat datang. silahkan daftar untuk dapatkan kupon promo menarik dan menjadi customer setia kami agar order seblak lebih gampang.</p>
 
-        <div className="form-control w-full max-w-xs text-[#293340] mx-auto my-20 ">
+        <div className="form-control text-[#293340] mx-12 my-10 sm:my-16 sm:w-full sm:mx-auto sm:max-w-xs ">
   <label className="label">
     <span className="label-text">email :</span>
   </label>

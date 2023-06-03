@@ -44,8 +44,8 @@ export default function Terimakasih() {
   },[])
    return (
     <>
-     <div className={`fixed ${id_resi_modal ? '-top-2 right-6' : '-top-36 right-6 transition' }  pt-6 pb-4 shadow-md w-[360px] mx-auto  grid place-items-center z-50 bg-white text-neutral-700 tr`}>
-   <span> ID RESI :</span><p  className="font-bold font-xl py-3 text-neutral-900"> {ID_resi ? ID_resi :  "Tidak ada id resi." }</p>
+     <div className={`fixed ${id_resi_modal ? '-top-2 right-0 sm:right-6' : '-top-36 right-0 sm:right-6 transition' } pt-3 pb-2 sm:pt-6 sm:pb-4 shadow-md w-full sm:w-[360px] mx-auto  grid place-items-center z-50 bg-white text-neutral-700 tr`}>
+   <span> ID RESI :</span><p  className="font-bold font-xl py-1 sm:py-3 text-neutral-900"> {ID_resi ? ID_resi :  "Tidak ada id resi." }</p>
       <p className="text-neutral-700">Simpan id resi di atas dengan baik yaa.</p>
       </div>
     <div className="hero min-h-screen bg-[#ffa500] relative">
@@ -60,7 +60,7 @@ export default function Terimakasih() {
   </div>
 </div>
 
-<div className="absolute bottom-5 right-8 ">
+<div className="absolute sm:bottom-5 sm:right-8 bottom-5 right-0 left-0 text-center sm:text-right ">
 <button className="btn btn-primary bg-orange-600 border-none hover:bg-orange-400 mr-2" onClick={() => setID_Modal(!id_resi_modal ||false)}> <Image src={id} alt="keranjang" width={23} height={23}/><span className="pl-1">ID RESI</span></button>
 
 <Link href={`${path}#tbl_pesan`}><button className="btn btn-primary bg-orange-600 border-none hover:bg-orange-400" onClick={() => setKeranjangTamu(!keranjangTamu ||false)}> <Image src={keranjang} alt="keranjang" width={23} height={23}/><span className="pl-1">Pesanan Saya</span></button></Link>

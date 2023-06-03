@@ -9,7 +9,7 @@ export function Cards_flex ({props}) {
             <span className='capitalize text-base lg:text-left block text-slate-700'>  Resep tradisional. layanan terbaik peralatan modern</span>
             <p className=' mt-7 text-[14px] text-justify lg:text-left text-slate-500'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut cumque quisquam quaerat necessitatibus, cupiditate totam doloremque soluta corrupti assumenda magnam pariatur earum quia, optio sequi excepturi quasi quibusdam molestias?</p>
             <section className="my-7 sm:my-16">
-            <section className={`${props.btn_hidden}`}> <Button_order text={'ORDER NOW'}/> </section>
+            <section className={`${props.btn_hidden}`}> <Button_order text={'ORDER NOW'} Links={'/pages/list_menu'}/> </section>
             <div className={`text-neutral-700 flex items-center gap-2 ${props.know_hidden}`}> Know More <div className="w-20 h-[2px] bg-neutral-700 mt-1"></div> </div>
             </section>
             </div>

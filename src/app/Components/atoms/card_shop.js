@@ -2,6 +2,9 @@
 import Image from 'next/image'
 import add_keranjang from '../assets/icons/basket_add.svg'
 import { useRouter } from "next/navigation"
+import Loading from './loading'
+import { useState } from 'react'
+import { loading } from '../molecules/navigation'
 
 
 export const DataShop = (props) =>{
@@ -11,11 +14,15 @@ export const DataShop = (props) =>{
 
 export default function Card_shop({props}) {
    const router = useRouter()
+   const [loading_btn,setLoading_btn] = useState(false)
+   const loadingset = loading_btn && <Loading/>
   
    const NextOrderPage = async (data) => {
     await DataShop(data)
     router.push('/pages/list_menu/order_now')
   }
+
+
 
   return (
 <div className="card card-compact w-96 bg-base-100 shadow-xl text-slate-900">
@@ -30,7 +37,7 @@ export default function Card_shop({props}) {
         title : props.title,
         desc : props.desc,
         harga : props.harga
-      })}>order now</button>
+      },loading(setLoading_btn))}>{loading_btn ? <Loading/> :"order now" }</button>
     </div>
   </div>
 </div>  )

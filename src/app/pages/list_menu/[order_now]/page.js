@@ -1,6 +1,8 @@
 'use client'
 
 import Breadcump from "@/app/Components/atoms/breadcump"
+import Loading from "@/app/Components/atoms/loading"
+import { loading } from "@/app/Components/molecules/navigation"
 import Add_Data from "@/app/config/add_data"
 import Image from "next/image"
 import { redirect, useParams,useRouter } from "next/navigation"
@@ -38,6 +40,9 @@ export default function Order() {
   const router = useRouter()
   const {image,title,desc,harga} = DataSave()
   const [harga_seblak_tambah,setHarga] = useState(0)
+  const [loading_btn,setLoading_btn] = useState(false)
+  const loadingset = loading_btn && <Loading/>
+ 
   const [input,setInputs] = useState({
     nama : "",
     alamat : "",
@@ -73,7 +78,13 @@ export default function Order() {
     total_harga : input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000)),
     nama_seblak : title,
    })
-   router.replace('/terimakasih')
+   if(confirm('yakin ?')) {
+     setTimeout(()=>{
+       loading(setLoading_btn)       
+    },1200)
+    router.replace('/terimakasih')
+  
+  }
   }
   return (
     <section className='container mx-auto my-20 text-neutral-900'>
@@ -120,7 +131,7 @@ export default function Order() {
     </section>  
     <div className="static flex justify-center items-center mt-12 mb-2 sm:-bottom-3 sm:right-0 lg:absolute">
     <div className="px-5">Total :<span className=" text-orange-500 font-bold"> {input.jumlah == 1 ? rupiah(harga+(input.level_pedas === 'Pedas setan' && 2000)) : rupiah((harga*input.jumlah)+(input.level_pedas === 'Pedas setan' && 2000))}  </span></div>
-      <button type="submit" className="btn btn-primary bg-orange-500 border-none hover:bg-oren-seblak">Pesan</button>
+      <button type="submit" className="btn btn-primary bg-orange-500 border-none hover:bg-oren-seblak">{<Loading/> && 'Pesan'}</button>
     </div>
     </form>
   
