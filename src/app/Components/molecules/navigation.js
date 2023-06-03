@@ -64,8 +64,8 @@ export default function Navigation({props}) {
     
     <Link href={'/pages/signup'} onClick={() => loading(setLoading_btn)}> <li ><p className='hover:bg-orange-400 active:bg-orange-300 rounded-md hidden lg:inline'>Daftar </p></li></Link>
     <Link href={'/pages/login'}  onClick={() => loading(setLoading_btn)}> <li><p  className='hover:bg-orange-400 active:bg-orange-300  rounded-md hidden lg:inline' >Masuk</p></li></Link>
-    
-      <section className='flex gap-2'>
+
+<section className='flex gap-2'>
       <section className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle hover:bg-orange-400 active:bg-orange-300 rounded-full">
         <section className="indicator">
@@ -85,9 +85,13 @@ export default function Navigation({props}) {
       <li className='relative sm:hidden'>
       <InputSearch props={{searchkey}}/>
     </li>
-    <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Home</p></li></Link>      <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Menu Seblak</p></li></Link>
-      <Link href={'/pages/signup'}  onClick={()=>loading(setLoading_btn)}> <li className='inline'><p className='active:bg-orange-400'>Daftar</p></li></Link>
-    <Link href={'/pages/login'} onClick={()=>loading(setLoading_btn)}> <li className='inline'><p className='active:bg-orange-400'>Masuk</p></li></Link>      
+    <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Home</p></li></Link>      
+    <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Menu Seblak</p></li></Link>
+      <Link href={'/pages/signup'}  onClick={()=>loading(setLoading_btn)}> <li className='inline sm:hidden'><p className='active:bg-orange-400'>Daftar</p></li></Link>
+    <Link href={'/pages/login'} onClick={()=>loading(setLoading_btn)}> <li className='inline sm:hidden'><p className='active:bg-orange-400'>Masuk</p></li></Link>      
+    <div className="tooltip tooltip-bottom hover:cursor-text bg-transparent hover:bg-transparent  focus:text-white focus:bg-transparent focus:outline-gray-100" data-tip="Silahkan laporkan keluhan dan masalah seperti kehilangan ID pesanan dan lainnya. kami akan membantu anda. terimakasih">
+    <Link href="https://wa.me/085723976965" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Lapor Masalah</p></li></Link>
+    </div>
     </ul>
     </section>
     </section>

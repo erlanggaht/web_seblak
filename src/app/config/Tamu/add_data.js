@@ -1,5 +1,5 @@
-import { addDoc, collection, doc } from "firebase/firestore";
-import { db } from "./firebase";
+import { addDoc, collection, } from "firebase/firestore";
+import { db } from "../firebase";
 
 
 function TanggalIndoensia () {

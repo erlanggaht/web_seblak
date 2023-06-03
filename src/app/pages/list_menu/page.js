@@ -32,7 +32,7 @@ export default function Page() {
       props = {{image:buy4,title:"Seblak Baso",desc:"hmzzz menarik seblak baso",harga:18000}}
       />
     </section>
-
+    <p className='text-center text-slate-700'>Menu seblak baru akan tersedia...</p>
     </section>
   )
 }

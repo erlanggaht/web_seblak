@@ -20,7 +20,7 @@ export default async function Signup() {
     <span className="label-text">password :</span>
   </label>
   <input type="password" placeholder="*******" className="input input-bordered w-full max-w-xs" />
-  <div className='text-right'>
+  <div className='text-right'>  
  <Link href='/pages/login'> <button  className='py-3 px-5 my-3 rounded-sm hover:bg-transparent hover:text-gray-500'>Masuk</button></Link>
   <button type='submit' className='py-3 px-5 my-3 rounded-sm bg-orange-500 text-white'>Daftar</button>
   </div>

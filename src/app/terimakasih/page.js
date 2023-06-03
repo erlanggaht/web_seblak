@@ -6,7 +6,7 @@ import keranjang from '../Components/assets/icons/keranjang.svg'
 import id from '../Components/assets/icons/id.svg'
 import Table from "../Components/atoms/table_thanks"
 import { useEffect, useState } from "react"
-import Get_data from "../config/get_data"
+import Get_data from "../config/Tamu/get_data"
 
 
 export default function Terimakasih() {

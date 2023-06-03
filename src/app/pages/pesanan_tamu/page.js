@@ -1,7 +1,7 @@
 import React from 'react'
 import { headers } from 'next/headers';
 import Table from '@/app/Components/atoms/table_thanks';
-import Get_data from '@/app/config/get_data';
+import Get_data from '@/app/config/Tamu/get_data';
 
 
 

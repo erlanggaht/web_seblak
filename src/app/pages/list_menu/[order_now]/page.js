@@ -3,11 +3,12 @@
 import Breadcump from "@/app/Components/atoms/breadcump"
 import Loading from "@/app/Components/atoms/loading"
 import { loading } from "@/app/Components/molecules/navigation"
-import Add_Data from "@/app/config/add_data"
+import Add_Data from "@/app/config/Tamu/add_data"
+import { db } from "@/app/config/firebase"
 import Image from "next/image"
 import { redirect, useParams,useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-
+import {addDoc, doc, setDoc} from 'firebase/firestore'
 
 const rupiah = (number)=>{
   return new Intl.NumberFormat("id-ID", {
@@ -86,8 +87,18 @@ export default function Order() {
   
   }
   }
+
+  async function addDatas() {
+    const cityRef = doc(db, 'cities', 'BJ');
+    setDoc(cityRef, {
+      umur : 16,
+      kota : "sumedang"
+    });
+    console.log(cityRef)
+  }
   return (
     <section className='container mx-auto my-20 text-neutral-900'>
+      <button onClick={() => addDatas()}>Add</button>
           <section className='p-3 shadow-sm border rounded-md text-slate-900'>
     <Breadcump props={{page1:"pages",page2:"list_menu",page3:path.order_now}}/>
     </section>
