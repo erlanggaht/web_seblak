@@ -5,10 +5,10 @@ import { Cards_flex } from '../organism/card_flex'
 export default function Card_main() {
   return (
     <>
-     <section className='cards mx-10 py-14 '>
-        <section className='text-center'>
-          <h2 className='text-3xl text-neutral-700'>Dapatkan seblak kami untuk acara anda berikutnya</h2>
-          <p className='text-sm text-gray-400 mx-auto py-2 lg:w-2/3 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, vitae? Corrupti pariatur nobis, temporibus earum quasi molestiae ?</p>
+     <section className='cards mx-2 sm:mx-10 py-6 sm:py-14 '>
+        <section className='text-center mt-10 sm:mt-0'>
+          <h2 className='text-2xl sm:text-3xl text-neutral-700'>Dapatkan seblak kami untuk acara anda berikutnya</h2>
+          <p className='text-md text-gray-400 mx-auto py-2 lg:w-2/3 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, vitae? Corrupti pariatur nobis, temporibus earum quasi molestiae ?</p>
     </section>
     <section className='flex justify-center md:flex-nowrap flex-wrap gap-6 mt-10 sm:mt-16'>
       <Cards values={{

@@ -17,15 +17,15 @@ export default function Home() {
     <main className="mt-20">
      <Card_main/>
     </main>
-    <section className="my-20">
-    <h2 className='text-2xl text-neutral-700 pl-20 pb-6'>Lihat gambar lainnya <div className="h-[2px] bg-neutral-700 mt-1"></div></h2>
-    <section className="flex justify-center mt-10">
+    <section className="my-2 sm:my-20">
+    <h2 className='text-2xl text-neutral-700 pl-10 sm:pl-20 pb-6'>Lihat gambar lainnya <div className="h-[2px] bg-neutral-700 mt-1"></div></h2>
+    <section className="flex justify-center mt-10 p-3">
     <section className="flex gap-1 flex-wrap justify-center sm:justify-start sm:flex-nowrap">
       <Artboard/>
     </section>
     </section>
     </section>
-    <h2 className='text-2xl text-neutral-700 pl-20 pb-6'>Komentar<div className="h-[2px] bg-neutral-700 mt-1"></div></h2>
+    <h2 className='text-2xl text-neutral-700 pl-10 sm:pl-20 pb-6 mt-12'>Komentar<div className="h-[2px] bg-neutral-700 mt-1"></div></h2>
     <section className="px-8 py-8 text-slate-900 overflow-y-scroll max-h-96 mx-full sm:w-[70%] mx-6 sm:mx-auto bg-chat">
       <Chat props={{
         nama:"Melya",

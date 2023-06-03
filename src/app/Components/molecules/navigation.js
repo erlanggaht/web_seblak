@@ -65,9 +65,7 @@ export default function Navigation({props}) {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-oren-seblak">
       <li className='relative sm:hidden'>
-     <section className='scale-0 sm:scale-100 absolute right-0 top-0 bottom-0 hover:bg-transparent scale-95 gap-1' onClick={() => document.querySelector('.input-search').focus()}> 
-     <Kbd props={{text1:"CTRL", text2:"Y"}}/> 
-     </section>
+
       <InputSearch props={{searchkey}}/>
     </li>
       <li className='inline'><p>Home</p></li>

@@ -5,7 +5,6 @@ export function middleware(request) {
   // Store current request url in a custom header, which you can read later
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-url', request.url);
-  console.log(request)
   if(request.url === 'http://localhost:3000/pages/pesanan_tamu/')return NextResponse.redirect(new URL('http://localhost:3000/pages/'),request.url)
   let p = []
   let reqs = request.nextUrl.search.split('=')[1].split('+').filter(m => m !== '' ? p = m : p = ["tidakvalid"])

@@ -24,9 +24,7 @@ header{
 .header-aset {
     background-image: url('./Components/assets/seblak_g.png');
 }
-.header-jahanam {
-    background-image: url('./Components/assets/jahanam.jpg');
-}
+
 
 .cf1{
     background-image: url('./Components/assets/krupuk.jpg');
@@ -48,21 +46,7 @@ header{
 }
 
 
-.cards {
-position: relative;
-}
 
-.cards::before{
-    content: "";width: 100%;height: 100%;
-    background-image: url('./Components/assets//seblaks_bungkus.png');
-    background-repeat: no-repeat;
-    background-position: bottom -70px right 20px;
-    background-size: contain;
-    position: absolute;
-    bottom: 90px;
-    right: -40px;
-    filter: opacity(0.3) blur(10px);
-}
 
 .artboard1-css {
     background-image: url('./Components/assets/art1.jpg');
