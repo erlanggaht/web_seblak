@@ -7,7 +7,6 @@ import React, { useEffect, useState } from 'react'
 export default function Login() {
   const router = useRouter()
   const path = usePathname()
-  console.log(path)
   const [user,setUser] = useState({
     AToken : "",
     username : "",
@@ -23,10 +22,10 @@ export default function Login() {
       username : config_login.username,
       userid : config_login.userid
     })
-    router.push (`${path}${user.AToken}${user.userid}`)
+    router.push(`${path}${user.AToken}`)
+
    }
  
-
   return (
     <div className='mt-7'>
 

@@ -5,6 +5,9 @@ const nextConfig = {
     domains: ['res.cloudinary.com',"daisyui.com"],
   },
   trailingSlash: true,
+  experimental: {
+    serverActions: true,
+  },
 }
 
 module.exports = nextConfig
