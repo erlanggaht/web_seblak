@@ -7,8 +7,8 @@ export default function Input_email() {
     <span className="label-text">Email kamu</span>
   </label>
   <label className="input-group">
-    <span>Email</span>
-    <input type="text" placeholder="asep@email.com" className="input input-bordered w-[170px]" />
+    <span className='text-neutral-700 dark:text-slate-700 dark:bg-gray-200 bg-white'>Email</span>
+    <input type="text" placeholder="asep@email.com" className="input  w-[170px] bg-white" />
   </label>
 </div>  )
 }

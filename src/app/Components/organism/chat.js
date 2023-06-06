@@ -14,7 +14,7 @@ export default function Chat({props}) {
     Erlanggaht
     <time className="text-xs opacity-50">Admin</time>
   </div>
-  <div className="chat-bubble bg-orange-500">Silahkan order dan  silahkan tinggalkan komentar, terimakasih para seblakers.</div>
+  <div className="chat-bubble bg-orange-500 text-white">Silahkan order dan  silahkan tinggalkan komentar, terimakasih para seblakers.</div>
   <div className="chat-footer opacity-50">
     Delivered
   </div>
@@ -30,7 +30,7 @@ export default function Chat({props}) {
     {props.nama}
     <time className="text-xs opacity-50">CS</time>
   </div>
-  <div className="chat-bubble bg-oren-skuy">I hate you!</div>
+  <div className="chat-bubble bg-oren-skuy  text-white">I hate you!</div>
   <div className="chat-footer opacity-50">
     Seen at {props.waktu}
   </div>
@@ -46,7 +46,7 @@ export default function Chat({props}) {
     {props.nama}
     <time className="text-xs opacity-50">CS</time>
   </div>
-  <div className="chat-bubble bg-oren-skuy">I hate you!</div>
+  <div className="chat-bubble text-white">I hate you!</div>
   <div className="chat-footer opacity-50">
     Seen at {props.waktu}
   </div>

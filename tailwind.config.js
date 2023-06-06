@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode:"class",
  content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,7 +12,8 @@ module.exports = {
     extend: {
       colors: {
         'oren-seblak': '#d33f01',
-        'oren-skuy' : '#d33f01'
+        'oren-skuy' : '#d33f01',
+        'oren-dasar':'#ffa500'
       },
     },
     fontSize: {

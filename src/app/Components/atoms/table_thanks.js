@@ -11,7 +11,7 @@ export default  function Table({props,dataTamu}) {
 <h2 className='text-lg px-2 pb-1 text-slate-700 text-center sm:text-left'>{nama} - ( Tamu )</h2>
 <p className='text-sm px-2 mb-2 text-slate-700 text-center sm:text-left'>{tanggal_pembelian.split('.').join(' ')} - {waktu_pembelian}</p>
 </div>
-<Link href='/'><button className="btn btn-sm bg-[#ffa500] outline-none border-none hover:bg-orange-400">Kembali</button></Link>
+<Link href='/'><button className="btn btn-sm bg-[#ffa500] outline-none border-none hover:bg-orange-400 text-white">Kembali</button></Link>
 
 </div>
   <table className="table">
@@ -28,12 +28,12 @@ export default  function Table({props,dataTamu}) {
     </thead>
     <tbody>
       <tr className='text-slate-600'>
-        <td>{nama_seblak}</td>
-        <td>{level_pedas}</td>
-        <td>{alamat}</td>
-        <td>{jumlah}</td>
-        <td>{total_harga}</td>
-        <td>sedang di antar..</td>
+        <td className=' bg-white'>{nama_seblak}</td>
+        <td className=' bg-white'>{level_pedas}</td>
+        <td className=' bg-white'>{alamat}</td>
+        <td className=' bg-white'>{jumlah}</td>
+        <td className=' bg-white'>{total_harga}</td>
+        <td className=' bg-white'>sedang di antar..</td>
       </tr>
     </tbody>
   </table>

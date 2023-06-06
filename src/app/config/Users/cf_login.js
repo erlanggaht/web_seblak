@@ -1,6 +1,5 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { provider } from "../firebase";
-import { setCookie } from "nookies";
 
 async function Cf_Login () {
     const auth = await getAuth();

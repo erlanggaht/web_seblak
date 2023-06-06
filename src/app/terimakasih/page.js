@@ -24,7 +24,7 @@ export default function Terimakasih() {
     } else {
       setTimeout(()=>{
         sessionStorage.clear()    
-      },3000)
+      },3.6e+6)
     }
 
   }
