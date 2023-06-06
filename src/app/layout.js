@@ -12,11 +12,11 @@ export const metadata = {
 
 
 export default  async function RootLayout({ children }) {
-  const getcookie = await 'undefined' ? 'light' : cookies().get('dark').value  
-  const b = cookies().get('dark').value
+  // const getcookie = await 'undefined' ? 'light' : cookies().get('dark').value  
+  // const b = cookies().get('dark').value
 
   return (
-    <html lang="en"  className={`${b}`}>
+    <html lang="en"  >
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </head>
