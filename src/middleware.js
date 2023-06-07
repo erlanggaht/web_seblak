@@ -9,14 +9,12 @@ export function middleware(request) {
   let reqs = false && request.nextUrl.search.split('=')[1].split('+').filter(m => m !== '' ? p = m : p = ["tidakvalid"])
   if(p[0] === 'tidakvalid') return NextResponse.redirect(new URL('/pages/pesanan_tamu/?id='+p,request.url)) 
   
-
+  
   const res = NextResponse.next({
     request: {
       headers: requestHeaders,
     }
   });
- 
-
 
       return res
    

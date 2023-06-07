@@ -10,6 +10,8 @@ import Loading from '../atoms/loading'
 import Cf_Login from '@/app/config/Users/cf_login'
 import Login_csr_true from '@/app/config/Users/login.csr'
 import ToggleDarkmode from '../atoms/toggle_darkmode'
+import { usePathname } from 'next/navigation'
+import { destroyCookie } from 'nookies'
 
 
 // MX layout mx-40
@@ -35,24 +37,30 @@ export function loading(setLoading_btn) {
 
   setTimeout(()=>{
     setLoading_btn(false)
-  },1000)
+  },3000)
 }
 
 
 export default function Navigation({props}) {
   const [searchkey,setSearchKey] = useState(false)
   const [login,setLogin] = useState()
+  const path = usePathname()
   
   // Loading UI
   const [loading_btn,setLoading_btn] = useState(false)
   const loadingset = loading_btn && <Loading/>
 
+  async function logout (){
+    if(!confirm('Kamu akan logout ?')) return false
+    await  destroyCookie(null,'msk')
+    await  destroyCookie(null,'tkn')
+    location.href = '/pages/login'
+  }
 
   useEffect(()=> {
     SearchKeyDown(setSearchKey)
     setLogin(Login_csr_true())
   },[])
-
   return (
 <>
 <section className="navbar lg:flex  lg:px-32  py-5 bg-[#ffa500] dark:bg-transparent">
@@ -67,18 +75,19 @@ export default function Navigation({props}) {
      <Kbd props={{text1:"CTRL", text2:"Y"}}/> </section>
       <InputSearch props={{searchkey}}/>
     </li>
-    {login ? <Link href={'/pages/logout'}  onClick={() =>confirm('Yakin Logout?') ?router.push('/pages/logout'):null }> <li ><p className='hover:bg-orange-400 active:bg-orange-300 rounded-md hidden lg:inline'>Logout </p></li></Link> :
+    {login ? <li onClick={() => logout()} ><p className='hover:bg-orange-400 active:bg-orange-300 rounded-md hidden lg:inline' >Logout </p></li> :
     <>
     <Link href={'/pages/login'}  onClick={() => loading(setLoading_btn)}> <li><p  className='hover:bg-orange-400 active:bg-orange-300  rounded-md hidden lg:inline' >Masuk</p></li></Link></>}
 
 <section className='flex gap-2'>
-<ToggleDarkmode/>
+{path !== '/' ? '' : <ToggleDarkmode/>}
       <section className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle hover:bg-orange-400 active:bg-orange-300 rounded-full">
-        <section className="indicator">
+       <Link href={"pages/keranjang"}> <section className="indicator">
         <Image src={keranjang} width={32} height={32} alt='keranjang'  />
           <span className="badge badge-sm indicator-item bg-white text-neutral-900 border-0">8</span>
         </section>
+        </Link>
       </label>
       <section tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"/>
     </section>
@@ -95,7 +104,7 @@ export default function Navigation({props}) {
     <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Home</p></li></Link>      
     <Link href="/pages/list_menu" onClick={()=>loading(setLoading_btn)} ><li className='inline'><p className='active:bg-orange-400'>Menu Seblak</p></li></Link>
     
-    {login ? <Link href={'/pages/logout'} onClick={() =>confirm('Yakin Logout?') ?router.push('/pages/logout'):null }> <li ><p className='hover:bg-orange-400 active:bg-orange-300 rounded-md lg:inline'>Logout </p></li></Link> :
+    {login ? <li onClick={() => logout()} ><p className='hover:bg-orange-400 active:bg-orange-300 rounded-md lg:inline'>Logout </p></li>:
    <> <Link href={'/pages/login'} onClick={()=>loading(setLoading_btn)}> <li className='inline sm:hidden'><p className='active:bg-orange-400'>Masuk</p></li></Link> </> }   
 
     <div className="tooltip tooltip-bottom hover:cursor-text bg-transparent hover:bg-transparent  focus:text-white focus:bg-transparent focus:outline-gray-100" data-tip="Silahkan laporkan keluhan dan masalah seperti kehilangan ID pesanan dan lainnya. kami akan membantu anda. terimakasih">

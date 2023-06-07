@@ -27,7 +27,7 @@ export default function Card_shop({props}) {
 
 
   return (
-<div className="card card-compact w-96 bg-base-100 shadow-xl text-neutral-900 bg-white">
+<div className="card card-compact w-96  shadow-xl text-neutral-900 bg-white">
   <figure className='h-[256px] w-[100%]'><Image src={props.image} alt={props.title} height={256} width={328} className='max-w-full object-cover w-full h-full'/></figure>
   <div className="card-body">
     <h2 className="card-title max-h-[60px] h-[50px]">{props.title}</h2>

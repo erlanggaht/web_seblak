@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation"
 import { parseCookies, setCookie } from "nookies"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -10,12 +10,17 @@ export default function ToggleDarkmode() {
   const cookie = parseCookies().dark
   const router = useRouter()
   const path = usePathname()
+  
+  useEffect(()=>{
+    setCookie(null,'dark','light')
+  },[])
+  
   async function darkToggle(){
-  setCookie(null,'dark','light')
-   router.refresh()
+  await setCookie(null,'dark','light')
+   location.href = '/'
   }
   async function darkToggleOff () {
-    setCookie(null,'dark','dark')
+   await setCookie(null,'dark','dark')
     router.refresh()
   }
 

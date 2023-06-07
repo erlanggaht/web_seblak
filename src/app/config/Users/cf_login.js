@@ -10,9 +10,10 @@ async function Cf_Login () {
         const token = credential.accessToken;
         const user = result.user;
         users = {
-          token,
+          token :user.accessToken,
           username : user.displayName,
-          userid : user.uid,
+          userid : user.uid,  
+          
 
         }
         

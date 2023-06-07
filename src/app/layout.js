@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { cookies, headers } from 'next/headers'
+import { setCookie } from 'nookies'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,11 +13,10 @@ export const metadata = {
 
 
 export default  async function RootLayout({ children }) {
-  // const getcookie = await 'undefined' ? 'light' : cookies().get('dark').value  
-  // const b = cookies().get('dark').value
+  const getcookie = cookies().get('dark')
 
   return (
-    <html lang="en"  >
+    <html lang="en" class={!getcookie ? "light" : getcookie.value} >
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </head>
