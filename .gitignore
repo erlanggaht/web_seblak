@@ -36,3 +36,5 @@ cert.crt
 
 ca.crt
 ca.key
+*.tsbuildinfo
+next-env.d.ts

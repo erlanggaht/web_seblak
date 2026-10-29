@@ -1,39 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Warung Seblak
 
-## Getting Started
+Landing page satu halaman menggunakan Next.js App Router, TypeScript strict, dan Tailwind CSS. Tidak membutuhkan Firebase, database, akun, atau environment variable.
 
-First, run the development server:
+## Menjalankan
 
-```bash
+Gunakan Node.js 22 atau lebih baru.
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Pemeriksaan
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```sh
+npm run lint
+npm run typecheck
+npm run format:check
+npm run build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`npm run format` merapikan kode sekaligus mengurutkan class Tailwind. Build menghasilkan situs statis di `out/`. Untuk memakai `npm start`, hapus `output: "export"` di `next.config.ts` lalu build kembali.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Struktur
 
-## Learn More
+- `src/app/`: route, layout, dan token tema.
+- `src/components/`: komponen section dengan nama PascalCase.
+- `public/images/`: foto asli project.
 
-To learn more about Next.js, take a look at the following resources:
+File khusus Next.js mengikuti konvensi framework (`page.tsx`, `layout.tsx`). Tampilan ditulis menggunakan class Tailwind. CSS global hanya berisi import Tailwind dan token tema. Font DM Sans disimpan lokal di `src/assets/fonts/`, beserta lisensi OFL, tanpa permintaan font ke layanan eksternal. Arah visual dan alasan desain dicatat di `DESIGN.md`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# web_seblak
+Konten menu bisa diedit di `src/components/Menu.tsx`. Alamat, jam buka, kontak, harga, dan tautan pemesanan belum dicantumkan karena belum tersedia informasi yang terverifikasi.
