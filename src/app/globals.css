@@ -6,9 +6,13 @@
   --color-brand: #f73402;
   --color-brand-dark: #c02400;
   --color-brand-light: #ff5426;
-  --color-muted: #625b52;
+  --color-muted: #453e35;
 }
 
 @theme inline {
   --font-sans: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+}
+
+body {
+  text-rendering: optimizeLegibility;
 }

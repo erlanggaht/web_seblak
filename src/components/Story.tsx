@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import seblak from "../../public/images/art1.jpg";
 
 export default function Story() {
@@ -25,14 +26,14 @@ export default function Story() {
         <p className="mt-5 max-w-xl text-base leading-8 text-muted">
           Lihat menunya, pilih isian yang kamu suka.
         </p>
-        <a
+        <Link
           href="#menu"
           className="mt-7 inline-flex min-h-11 items-center font-semibold underline decoration-ink/40 underline-offset-8 hover:decoration-ink"
         >
           Lihat pilihan topping
-        </a>
+        </Link>
       </div>
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-4/3 overflow-hidden">
         <Image
           src={seblak}
           alt="Sajian seblak dengan beragam isian dan kuah merah"

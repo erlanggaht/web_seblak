@@ -20,7 +20,7 @@ export default function Gallery() {
       </div>
       <div className="grid gap-4 sm:gap-6 md:grid-cols-[1.35fr_1fr]">
         <figure>
-          <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/10]">
+          <div className="relative aspect-4/3 overflow-hidden md:aspect-16/10">
             <Image
               src={first}
               alt="Seporsi seblak dengan berbagai topping"
@@ -34,7 +34,7 @@ export default function Gallery() {
           </figcaption>
         </figure>
         <figure>
-          <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/13.5]">
+          <div className="relative aspect-4/3 overflow-hidden md:aspect-[16/13.5]">
             <Image
               src={second}
               alt="Sajian seblak kuah berbumbu"

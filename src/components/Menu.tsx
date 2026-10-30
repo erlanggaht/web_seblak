@@ -49,7 +49,7 @@ export default function Menu() {
             key={item.name}
             className="grid grid-cols-[100px_minmax(0,1fr)] items-center gap-x-5 gap-y-4 border-b border-ink/20 py-6 sm:grid-cols-[160px_minmax(0,1fr)] sm:gap-x-8 lg:grid-cols-[200px_minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-x-12 lg:py-8"
           >
-            <div className="relative aspect-square overflow-hidden bg-cream sm:aspect-[4/3]">
+            <div className="relative aspect-square overflow-hidden bg-cream sm:aspect-4/3">
               <Image
                 src={item.image}
                 alt={item.name}

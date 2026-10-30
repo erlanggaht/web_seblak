@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="id"
       className={`${dmSans.variable} scroll-smooth motion-reduce:scroll-auto`}
     >
-      <body className="bg-cream font-sans text-ink antialiased selection:bg-brand selection:text-white [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-ink">
+      <body className="bg-cream font-sans text-ink subpixel-antialiased selection:bg-ink selection:text-white [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-ink">
         {children}
       </body>
     </html>
