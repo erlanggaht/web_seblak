@@ -1,7 +1,10 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Story from "@/components/Story";
 import OurMenu from "@/components/OurMenu";
+import FAQ from "@/components/FAQ";
+import StoreInfo from "@/components/StoreInfo";
 import Link from "next/link";
 
 export default function Home() {
@@ -17,6 +20,9 @@ export default function Home() {
       <main id="konten">
         <Hero />
         <OurMenu />
+        <Story />
+        <FAQ />
+        <StoreInfo />
       </main>
       <Footer />
     </div>

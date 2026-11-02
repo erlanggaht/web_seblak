@@ -1,24 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const dishes = [
-  {
-    name: "Seblak Original",
-    src: "/images/seblak-food.jpg",
-  },
-  {
-    name: "Seblak Ceker",
-    src: "/images/seblak(1).jpg",
-  },
-  {
-    name: "Seblak Prasmanan",
-    src: "/images/Seblak prasmanan.jpg",
-  },
-  {
-    name: "Seblak Setan",
-    src: "/images/Seblak Setan.jpg",
-  },
-];
+import { SITE_CONFIG, HERO_DISHES } from "@/data/content";
 
 export default function Hero() {
   return (
@@ -36,7 +18,7 @@ export default function Hero() {
           id="hero-title"
           className="mt-5 text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.08] font-bold tracking-tight text-cream"
         >
-          Warung Seblak Bandung
+          {SITE_CONFIG.name}
         </h1>
 
         <p className="mt-4 max-w-lg text-base leading-relaxed font-medium text-cream sm:text-lg">
@@ -45,12 +27,12 @@ export default function Hero() {
           makanmu.
         </p>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
           <Link
-            href="tel:088812345678"
-            className="inline-flex items-center gap-4 rounded-full border bg-transparent px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand"
+            href={SITE_CONFIG.phoneTel}
+            className="inline-flex items-center gap-3 rounded-full border border-cream/50 bg-transparent px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-brand"
           >
-            0888 1234 5678
+            {SITE_CONFIG.phone}
             <span aria-hidden="true" className="text-base leading-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +51,7 @@ export default function Hero() {
         </div>
 
         <div className="mt-10 grid w-full max-w-4xl grid-cols-2 gap-4 sm:mt-12 sm:grid-cols-4 sm:gap-6 lg:max-w-5xl lg:gap-8">
-          {dishes.map((dish, i) => (
+          {HERO_DISHES.map((dish, i) => (
             <div key={dish.name} className="flex flex-col items-center">
               <div className="relative aspect-square w-full overflow-hidden border-2 border-cream/40 shadow-lg select-none">
                 <Image
